@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const Url = require('./models/url');
 const app = express();
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 3000;
 require('dotenv/config');
 const uri = process.env.DB_CONNECTION
 mongoose.connect(uri, {
