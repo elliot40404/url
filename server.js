@@ -2,9 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const Url = require('./models/url');
 const app = express();
-const port = process.env.PORT || 3000;
-require('dotenv/config');
-const uri = process.env.DB_CONNECTION
+const port = process.env.PORT;
+
+const uri = process.env.DB_CONNECTION;
+
 mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -23,11 +24,6 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', (req, res) => {
     res.render('index', { url: new Url() });
 });
-
-// app.get('/log', async (req, res) => {
-//     const urls = await Url.find().sort({ createdAt: 'desc' })
-//     res.render('log', { urls: urls });
-// });
 
 app.post('/logs', async (req, res) => {
     const urls = await Url.find().sort({ createdAt: 'desc' })
