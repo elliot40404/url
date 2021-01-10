@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL SHORTENER</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="body">
+    <h1>URL SHORTENER</h1>
+    <div class="main">
+        <form action="/url" method="POST" class="form">
+            <input required autofocus autocomplete="off" type="text" name="link" id="link">
+            <button type="submit" class="btn">GO</button>
+        </form>
+    </div>
+    <% if (url.link) { %>
+        <div class="out">
+            <p>Your shortend url is
+                <a href="<%= url.link %>">
+                    <%= '192.168.0.8/' + url.slug %>
+                </a>
+            </p>
+        </div>
+        <% } %>
+            <div class="logs">
+                <a href="/log">SEE LOGS</a>
+            </div>
+</body>
+
+</html>
