@@ -15,3 +15,5 @@ function valid() {
         document.getElementById('btnn').removeAttribute('disabled');
     }
 }
+
+document.getElementById('text').addEventListener('click', copy);
