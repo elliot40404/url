@@ -1,7 +1,8 @@
 function copy() {
     const text = document.querySelector('#text');
+    const textc = document.querySelector('#text').value;
     try {
-        navigator.clipboard.writeText(text);
+        navigator.clipboard.writeText(textc);
     } catch (e) {
         console.log(e);
         text.select();
