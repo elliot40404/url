@@ -50,7 +50,7 @@ app.post('/url', async (req, res) => {
     }
 });
 
-app.get('/:slug', async (req, res) => {
+app.get('/:slug', async(req, res) => {
     try {
         const red = await Url.findOne({ slug: req.params.slug });
         res.redirect(red.link);
