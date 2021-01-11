@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const Url = require('./models/url');
 const app = express();
+require('dotenv/config');
 const port = process.env.PORT;
 
 const uri = process.env.DB_CONNECTION;
