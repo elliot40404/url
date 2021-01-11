@@ -19,13 +19,18 @@
     <% if (url.link) { %>
         <div class="out">
             <p>Your shortend url is
-                <a href="<%= url.link %>">
+                <a id="text" href="<%= url.link %>">
                     <%= 'https://urlshorte.herokuapp.com/' + url.slug %>
                 </a>
             </p>
         </div>
         <% } %>
-        <% navigator.clipboard.writeText(url.slug) %>
+        <% if (url.slug) { %>
+            <script>
+                const text = document.getElementById('text').innerText;
+                window.navigator.clipboard.writeText(text);
+            </script>
+        <% } %>
 </body>
 
 </html>
