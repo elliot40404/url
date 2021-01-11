@@ -19,18 +19,22 @@
     <% if (url.link) { %>
         <div class="out">
             <p>Your shortend url is
-                <a id="text" href="<%= url.link %>">
+                <a id="text" onclick="copy()">
                     <%= 'https://urlshorte.herokuapp.com/' + url.slug %>
                 </a>
             </p>
         </div>
         <% } %>
-        <% if (url.slug) { %>
-            <script>
-                const text = document.getElementById('text').innerText;
-                window.navigator.clipboard.writeText(text);
-            </script>
-        <% } %>
+    <script>
+        async function copy() {
+            const text = document.querySelector('#text').innerHTML;
+            try {
+                await navigator.clipboard.writeText(text);
+            } catch (e) {
+                console.log(e)
+            }
+        }
+    </script>
 </body>
 
 </html>

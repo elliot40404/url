@@ -65,6 +65,7 @@ h1 {
     padding: 10px 20px;
     text-decoration: none;
     color: red;
+    cursor: pointer;
 }
 
 .card {
